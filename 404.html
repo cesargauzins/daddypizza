@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daddy Pizz'IMT</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍕</text></svg>">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/admin.css">
+</head>
+<body class="admin">
+  <!-- Adresse inconnue (ou mauvais code secret) -->
+  <section class="notfound" id="notfound" hidden>
+    <div>
+      <h1>404<em>.</em></h1>
+      <p>Cette page n’existe pas… mais les pizzas, si.</p>
+      <a class="btn" href="/">Voir la vente →</a>
+    </div>
+  </section>
+
+  <!-- Connexion -->
+  <section class="login" id="login" hidden>
+    <form class="login-box" id="loginForm">
+      <div class="login-art" id="loginArt"></div>
+      <h1>Côté<br><em>cuisine.</em></h1>
+      <div class="field"><label for="pw">Mot de passe</label><input class="input" id="pw" type="password" autocomplete="current-password" autofocus></div>
+      <div class="error" id="loginError"></div>
+      <button class="btn block" type="submit">Entrer →</button>
+    </form>
+  </section>
+
+  <!-- Tableau de bord -->
+  <div id="dash" hidden>
+    <header class="admin-top">
+      <div class="wrap admin-top-inner">
+        <a class="logo" href="/" target="_blank" title="Voir le site client"><span class="logo-mark" id="logoMark"></span><span>Daddy Pizz'<em>IMT</em></span> <small>admin</small></a>
+        <nav class="tabs" id="tabs">
+          <button data-tab="orders" class="active">Commandes</button>
+          <button data-tab="sales">Ventes</button>
+          <button data-tab="pizzas">Pizzas</button>
+        </nav>
+        <button class="btn ghost small" id="logout">Déconnexion</button>
+      </div>
+    </header>
+
+    <main class="wrap admin-main">
+      <section data-panel="orders" id="panelOrders"></section>
+      <section data-panel="sales" id="panelSales" hidden></section>
+      <section data-panel="pizzas" id="panelPizzas" hidden></section>
+    </main>
+  </div>
+
+  <script src="/config.js"></script>
+  <script src="/shared.js"></script>
+  <script src="/admin.js"></script>
+</body>
+</html>

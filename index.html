@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daddy Pizz'IMT</title>
+  <meta name="theme-color" content="#fff4e3">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍕</text></svg>">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <a class="logo" href="/"><span class="logo-mark" id="logoMark"></span><span>Daddy Pizz'<em>IMT</em></span></a>
+      <span class="live off" id="liveBadge"><i></i><span>Connexion…</span></span>
+    </header>
+  </div>
+
+  <main id="app"><div class="loader"><div id="loaderPizza"></div></div></main>
+
+  <!-- Barre panier -->
+  <div class="cartbar" id="cartbar">
+    <span class="count" id="cartCount">0 pizza</span>
+    <span class="detail" id="cartDetail"></span>
+    <button class="btn" id="validateBtn">Valider →</button>
+  </div>
+
+  <!-- Modale commande -->
+  <div class="overlay" id="overlay">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" id="modal"></div>
+  </div>
+
+  <script src="/config.js"></script>
+  <script src="/shared.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+# Données locales de l'ancienne version (noms des clients) : jamais dans le dépôt
+archive/
+data.json*
+*.sql.local
+secrets*
+.env*
+.DS_Store
+Thumbs.db
