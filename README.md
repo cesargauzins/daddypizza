@@ -17,7 +17,7 @@ En ligne sur **https://daddypizza.sudoo.fr**
 
 ## Installation
 
-1. Dans Supabase → **SQL Editor**, coller le contenu de `supabase/schema.sql`, puis cliquer sur **Run**.
+1. Projet Supabase dédié : `daddypizza` (réf. `amzrjmksybznqlofslue`). Dans **SQL Editor**, coller le contenu de `supabase/schema.sql`, puis cliquer sur **Run**.
 2. Toujours dans le SQL Editor, définir le mot de passe et le code secret (la requête est en tête de `schema.sql`). Ne jamais committer cette requête une fois remplie.
 3. Dans `config.js`, mettre l'URL du projet et la clé publique (`publishable`).
 4. GitHub → **Settings → Pages** : source *Deploy from a branch*, `main` / `root`.
