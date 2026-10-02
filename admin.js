@@ -151,6 +151,7 @@ function renderOrders() {
         <div class="muted" style="margin-top:8px">${esc(sale.date ? formatDate(sale.date) + ' · ' : '')}${sale.startTime} – ${sale.endTime}</div>
       </div>
       <div class="actions">
+        <button class="btn small dark" id="exportPdf" ${orders.length ? '' : 'disabled title="Aucune commande à exporter"'}>Exporter en PDF</button>
         ${isActive(sale) ? `
           <label class="switch" title="Mettre la vente en pause ou la rouvrir">
             <input type="checkbox" id="saleSwitch" ${sale.status === 'open' ? 'checked' : ''}>
@@ -217,6 +218,12 @@ function renderOrders() {
     historyId = null;
     toast('Vente terminée');
     await loadAll();
+  });
+  const pdf = $('#exportPdf', el);
+  if (pdf) pdf.onclick = safe(async () => {
+    pdf.disabled = true; pdf.textContent = 'Préparation…';
+    try { await SlotsPdf.download(sale, orders); }
+    finally { pdf.disabled = false; pdf.textContent = 'Exporter en PDF'; }
   });
   const back = $('#backLive', el);
   if (back) back.onclick = () => { historyId = null; loadAll(); };
